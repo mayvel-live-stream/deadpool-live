@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deadpool.Live - Exclusive Live Stream</title>
+  <!-- Google Fonts: Inter and Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&family=Noto+Serif+JP:wght@900&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       PHASE 1: FAKE LOGIN STREAM PORTAL
+       ========================================== -->
+  <div id="login-container" class="phase-container active">
+    <!-- Stream Background Glitch (subtle ambient animation) -->
+    <div class="stream-bg-effect"></div>
+
+    <!-- Left Banner Area -->
+    <div id="banner-left" class="parody-banner-container left-side"></div>
+
+    <div class="portal-card">
+      <div class="portal-header">
+        <div class="live-badge">● LIVE</div>
+        <div class="logo-wrapper">
+          <span class="logo-dead">DEAD</span><span class="logo-pool">POOL</span><span class="logo-live">.LIVE</span>
+        </div>
+      </div>
+
+      <div class="portal-body">
+        <div class="stream-info">
+          <h2>[R-18] Marvel Rivals - Private Rank Grind with Wolverine</h2>
+          <p class="streamer-note">Viewer verification required. You must log in to view this restricted live broadcast.</p>
+        </div>
+
+        <form id="fake-login-form" autocomplete="off" onsubmit="return false;">
+          <div class="input-group">
+            <label for="username">Username or Email</label>
+            <input type="text" id="username" placeholder="Enter your username" required autocomplete="off">
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required autocomplete="off">
+          </div>
+          
+          <button type="submit" class="btn-primary" id="btn-submit">
+            <span class="btn-text">Log In & Watch Stream</span>
+            <span class="loading-spinner" id="spinner"></span>
+          </button>
+        </form>
+
+        <div class="divider"><span>OR SIGN IN WITH</span></div>
+
+        <div class="social-login-grid">
+          <button type="button" class="btn-social twitch-btn" id="social-twitch">
+            <svg class="icon twitch-icon" viewBox="0 0 24 24" fill="none">
+              <!-- Twitch Outer Purple/White shape (changes with currentColor) -->
+              <path d="M6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" fill="currentColor"/>
+              <!-- Twitch Inner White face (remains white) -->
+              <path d="M18.571 1.714L18.571 11.143L15.143 14.571H11.714L8.714 17.571V14.571H6.857V1.714H18.571Z" fill="#ffffff"/>
+              <!-- Deadpool angry eyes inside Twitch logo (holes using currentColor) -->
+              <polygon points="8,5 9.5,5 11.2,9.5 9.7,9.5" fill="currentColor" />
+              <polygon points="14.5,5 16,5 14.3,9.5 12.8,9.5" fill="currentColor" />
+            </svg>
+            Tw1tch
+          </button>
+          <button type="button" class="btn-social goggle-btn" id="social-goggle">
+            <svg class="icon goggle-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.114-6.887 4.114-4.695 0-8.503-3.808-8.503-8.514 0-4.705 3.808-8.513 8.503-8.513 2.062 0 3.963.748 5.434 2.122l3.244-3.244C18.665.922 15.632 0 12.24 0 5.48 0 0 5.48 0 12.24s5.48 12.24 12.24 12.24c6.76 0 11.76-4.76 11.76-11.76 0-.78-.06-1.536-.18-2.285H12.24Z"/></svg>
+            Goggle
+          </button>
+          <button type="button" class="btn-social xmen-btn" id="social-xmen">
+            <img class="icon xmen-icon" src="assets/xmen.png" alt="X-Men">
+            X-Men
+          </button>
+          <button type="button" class="btn-social jeffcord-btn" id="social-jeffcord">
+            <img class="icon jeff-icon" src="assets/jeffcord.png" alt="Jeffcord">
+            Jeffcord
+          </button>
+        </div>
+      </div>
+
+      <div class="portal-footer">
+        <p>By logging in, you agree to our fictitious terms of stream snacking.</p>
+      </div>
+    </div>
+
+    <!-- Right Banner Area -->
+    <div id="banner-right" class="parody-banner-container right-side"></div>
+
+    <!-- disclaimer-note placed at the absolute bottom of the entire page -->
+    <div class="site-disclaimer-container">
+      <p class="disclaimer-note">
+        *This is a non-profit fan parody joke site. We do NOT save or collect any credentials.<br>
+        *これは非営利のファンによるジョークサイトです。個人情報やパスワードの保存・収集は一切行っていません。
+      </p>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       PHASE 2: FAKE BLUE SCREEN OF DEATH (BSoD)
+       ========================================== -->
+  <div id="bsod-container" class="phase-container">
+    <div class="bsod-content">
+      <div class="bsod-emoticon">:(</div>
+      
+      <h1 class="bsod-title">Your PC ran into a chimichanga emergency and needs to restart. We're just collecting some error info, and then we'll restart for you.</h1>
+      
+      <div class="bsod-progress">
+        <span id="bsod-percentage">0</span>% complete
+      </div>
+
+      <div class="bsod-details">
+        <!-- Deadpool custom styled QR code -->
+        <div class="qr-code-wrapper">
+          <div class="fake-qr-code">
+            <!-- Deadpool Mask Silhouette in the center -->
+            <div class="qr-deadpool-eye left"></div>
+            <div class="qr-deadpool-eye right"></div>
+          </div>
+        </div>
+        
+        <div class="bsod-meta">
+          <p>For more information about this issue and possible fixes, visit:</p>
+          <p class="bsod-link">https://deadpool.live/chimichanga_fix</p>
+          
+          <div class="bsod-stopcode">
+            <p>If you call a support person, give them this info:</p>
+            <p>Stop code: <span>DEADPOOL_CHIMICHANGA_OVERFLOW</span></p>
+            <p>What failed: <span>fourth_wall_protocol.sys</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PHASE 2.5: CLASSIC WINDOWS ERROR FLOOD
+       ========================================== -->
+  <div id="desktop-container" class="phase-container"></div>
+
+  <!-- ==========================================
+       PHASE 2.75: JUMPSCARE SCREAMER (HIDDEN)
+       ========================================== -->
+  <div id="jumpscare-container" class="phase-container">
+    <img id="jumpscare-img" src="assets/horror_jumpscare.png" alt="JUMPSCARE!">
+  </div>
+
+  <!-- ==========================================
+       PHASE 3: WARNING & REVELATION PAGE
+       ========================================== -->
+  <div id="warning-container" class="phase-container">
+    <div class="stripes-bg"></div>
+    
+    <div class="warning-card">
+      <div class="comic-badge" id="badge-text">GOTCHA!</div>
+      
+      <!-- Language Selector -->
+      <div class="lang-toggle-container">
+        <button class="btn-lang" data-lang="en">EN</button>
+        <button class="btn-lang" data-lang="ja">JA</button>
+        <button class="btn-lang" data-lang="ko">KO</button>
+      </div>
+      
+      <div class="warning-header">
+        <img class="deadpool-face-icon" src="assets/deadpool_ban_icon.png" alt="Warning Icon">
+        <h2 id="header-title">Whoa, hold on there, buddy!</h2>
+      </div>
+
+      <div class="warning-body">
+        <div class="speech-bubble">
+          <p class="dp-voice" id="speech-text">「Hey! Did you just type your password on a random login page? <strong>BIG MISTAKE!</strong> If I were a real bad guy, your credentials would be on the dark web faster than you can say <em>'Chimichanga'</em>!」</p>
+        </div>
+
+        <div class="alert-box">
+          <h3 id="alert-title">🚨 Real Security Check!</h3>
+          <p id="alert-desc">This was a <strong>joke & security awareness demo</strong> created by the player <strong>"デッドプール.Live"</strong> in <em>Marvel Rivals</em>.</p>
+          <ul>
+            <li id="alert-li-1"><strong>Look at the URL:</strong> Real streaming sites (like Twitch) never host logins on unofficial domains!</li>
+            <li id="alert-li-2"><strong>Don't trust "Exclusive Streams":</strong> Scammers love baiting players with "private ranking climbs" or "skin giveaways".</li>
+            <li id="alert-li-3"><strong>No data was saved:</strong> Your inputs were instantly vaporized in the name of safety!</li>
+          </ul>
+        </div>
+
+        <!-- Prank Helper Section -->
+        <div class="prank-helper">
+          <h3 id="helper-title">🎮 Prank Your Friends!</h3>
+          <p id="helper-desc">Copy one of these parody URLs to bait your gaming group (they all redirect right here!):</p>
+          
+          <div class="url-selector-group">
+            <div class="url-option">
+              <span class="url-text" id="url-twitch">https://tw1tch.live/deadpool_stream</span>
+              <button class="btn-copy" id="btn-copy-twitch">Copy</button>
+            </div>
+            <div class="url-option">
+              <span class="url-text" id="url-rivals">https://marvelrivals-live.com/verify</span>
+              <button class="btn-copy" id="btn-copy-rivals">Copy</button>
+            </div>
+          </div>
+          <div class="copy-success-toast" id="copy-toast">Copied to clipboard! 💥</div>
+        </div>
+      </div>
+
+      <div class="warning-footer">
+        <button class="btn-secondary" id="btn-reset">Reset Prank / Try Again</button>
+      </div>
+    </div>
+
+    <!-- Creator Twitter Profile Card (Absolute placed in bottom-right corner) -->
+    <div class="warning-creator-credits">
+      <div class="creator-profile-card">
+        <a href="https://x.com/38Kan9150" target="_blank" rel="noopener noreferrer">
+          <img class="creator-avatar" src="assets/deadpool_ban_icon.png" alt="Creator Avatar">
+        </a>
+        <div class="creator-info">
+          <span class="creator-label" id="creator-label-text">サイト制作者</span>
+          <a href="https://x.com/38Kan9150" target="_blank" rel="noopener noreferrer" class="creator-name">@38Kan9150</a>
+          <a href="https://x.com/38Kan9150" target="_blank" rel="noopener noreferrer" class="creator-follow-link" id="creator-follow-text">ツイッターアカウントはこちら</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Glitch & Scanline Overlay effects globally -->
+  <div class="global-overlay scanlines"></div>
+  <div class="global-overlay noise"></div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
