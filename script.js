@@ -255,9 +255,14 @@ function spawnPopup(customMsg = null) {
   // Replace username template with entered username
   msg = msg.replace("[Username]", enteredUsername);
   
-  // Random position within desktop window
-  const left = Math.floor(Math.random() * 65) + 5; // 5% to 70%
-  const top = Math.floor(Math.random() * 55) + 10;  // 10% to 65%
+  // Random position within desktop window (Optimized for mobile responsive bounds to prevent overflow)
+  const isMobile = window.innerWidth <= 480;
+  const left = isMobile 
+    ? Math.floor(Math.random() * 15) + 5  // Mobile: 5% to 20%
+    : Math.floor(Math.random() * 65) + 5; // PC: 5% to 70%
+  const top = isMobile
+    ? Math.floor(Math.random() * 65) + 10  // Mobile: 10% to 75%
+    : Math.floor(Math.random() * 55) + 10; // PC: 10% to 65%
 
   const dialog = document.createElement('div');
   dialog.className = 'win-dialog';

@@ -2023,4 +2023,182 @@ body.freeze-cursor, body.freeze-cursor * {
   display: block;
 }
 
+/* ==========================================================================
+   RESPONSIVE DESIGN (Mobile & Tablet Support)
+   ========================================================================== */
+
+/* For tablets and smaller mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  /* 1. Portal (Login) Container Layout */
+  #login-container {
+    padding: 10px;
+  }
+  .portal-card {
+    padding: 32px 20px;
+    max-width: 92%;
+  }
+  
+  /* 2. BSOD Container Layout */
+  .bsod-content {
+    padding: 24px;
+  }
+  .bsod-emoticon {
+    font-size: 5rem;
+    margin-bottom: 16px;
+  }
+  .bsod-title {
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+  }
+  .bsod-progress {
+    font-size: 1.3rem;
+    margin-bottom: 32px;
+  }
+  .bsod-details {
+    gap: 20px;
+  }
+  .qr-code-wrapper {
+    padding: 8px;
+  }
+  .fake-qr-code {
+    width: 90px;
+    height: 90px;
+  }
+  .bsod-meta {
+    font-size: 0.75rem;
+  }
+
+  /* 3. Warning Card Layout */
+  #warning-container {
+    overflow-y: auto;
+    align-items: flex-start;
+    padding: 40px 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .warning-card {
+    max-width: 100%;
+    width: 100%;
+    padding: 50px 16px 25px 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+  }
+  
+  .comic-badge {
+    font-size: 1.05rem;
+    padding: 4px 12px;
+    top: 6px;
+    right: 12px;
+  }
+  
+  .warning-header {
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+  
+  .deadpool-face-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  #header-title {
+    font-size: 1.3rem;
+  }
+  
+  /* Prank Helper list adjust */
+  .url-option {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+  
+  .url-text {
+    margin-right: 0;
+    font-size: 0.75rem;
+    text-align: left;
+    overflow-x: auto;
+  }
+  
+  .btn-copy {
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
+  }
+
+  /* Language toggle position */
+  .lang-toggle-container {
+    top: 10px;
+    left: 10px;
+  }
+
+  /* 4. Creator Twitter card stack (Anti-overlap!) */
+  .warning-creator-credits {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .creator-profile-card {
+    width: 100%;
+    max-width: 280px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* For very small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .portal-card {
+    padding: 24px 16px;
+  }
+  
+  .logo-dead, .logo-pool {
+    font-size: 1.6rem;
+  }
+  .logo-live {
+    font-size: 0.9rem;
+  }
+  
+  .input-group label {
+    font-size: 0.72rem;
+  }
+  
+  .btn-primary, .btn-social {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+
+  .speech-bubble p {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .alert-box {
+    padding: 12px;
+  }
+  .alert-box h3 {
+    font-size: 0.85rem;
+  }
+  .alert-box li {
+    font-size: 0.75rem;
+  }
+  
+  /* Win dialog limit for small screens */
+  .win-dialog {
+    width: 270px !important;
+    font-size: 0.75rem;
+  }
+  .win-msg {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+}
+
 
