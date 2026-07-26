@@ -649,13 +649,13 @@ const bannerTemplates = [
     styleClass: "jk-style-strange",
     htmlContent: `
       <div class="jk-content" style="justify-content: space-around; background: #ffffff;">
-        <div class="jk-logo-header" style="border-color: #e5c158; color: #b8912e; background: rgba(229, 193, 88, 0.08); font-size: 0.55rem; letter-spacing: 0.2px; padding: 4px 2px;">REPORT FROM DR. STRANGE</div>
+        <div class="jk-logo-header" style="border-color: #e5c158; color: #b8912e; background: rgba(229, 193, 88, 0.08); font-size: 0.52rem; letter-spacing: 0.1px; padding: 4px 2px;">DR. STRANGE'S MEDICAL INSURANCE</div>
         <div class="strange-logo-wrapper" style="text-align: center; margin: 3px 0;">
           <img class="jk-strange-logo-img" src="assets/p_strange.png" alt="Strange Emblem">
         </div>
-        <div style="font-family: 'Fredoka', sans-serif; font-size: 0.72rem; font-weight: 800; color: #111; text-align: center; line-height: 1.35;">
-          PREVENT DEMISE!<br>
-          <span style="color: #c0392b; font-size: 0.52rem; display: block; margin-top: 3px; font-weight: 700; letter-spacing: 0.5px;">SANCTUM LIFE INSURANCE</span>
+        <div class="jk-strange-text-group" style="font-family: 'Fredoka', sans-serif; font-size: 0.72rem; font-weight: 800; color: #111; text-align: center; line-height: 1.35;">
+          PREVENT DISEASE & DEMISE!<br>
+          <span style="color: #c0392b; font-size: 0.52rem; display: block; margin-top: 3px; font-weight: 700; letter-spacing: 0.5px;">DR. STRANGE'S SANCTUM CLINIC</span>
         </div>
         <button class="jk-cta-btn" style="margin-bottom: 0; background: #111; color: #fff; border-color: #111; box-shadow: 3px 3px 0 #000; font-size: 0.75rem; font-weight: 900;">ENLIST NOW</button>
       </div>

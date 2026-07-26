@@ -2165,28 +2165,25 @@ body.freeze-cursor, body.freeze-cursor * {
     left: 12px !important;
     right: auto !important;
     transform: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 5px !important; /* Increased gap to prevent overlap */
+    display: block !important; /* Switch to block to force natural vertical block layout */
     z-index: 12 !important;
     width: auto !important;
   }
 
   .ad-loki-ja, .jk-loki-ja {
     writing-mode: horizontal-tb !important;
-    font-size: 0.82rem !important; /* Slightly smaller to fit nicely */
+    font-size: 0.78rem !important; /* Slightly smaller to fit nicely */
     letter-spacing: 0px !important;
     display: block !important;
-    margin: 0 !important;
+    margin: 0 0 4px 0 !important; /* Force bottom margin instead of Flexbox gap */
     padding: 0 !important;
-    line-height: 1.3 !important;
+    line-height: 1.2 !important;
   }
 
   .ad-loki-en, .jk-loki-en {
     writing-mode: horizontal-tb !important;
-    font-size: 0.5rem !important;
-    line-height: 1.3 !important;
+    font-size: 0.48rem !important;
+    line-height: 1.2 !important;
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -2311,9 +2308,28 @@ body.freeze-cursor, body.freeze-cursor * {
     left: 15px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    width: 60px !important;
-    height: 60px !important;
+    width: 82px !important; /* Width widened to fit buttons side-by-side */
+    height: auto !important; /* Auto height to prevent overflow! */
+    max-height: 90px !important;
+    padding: 4px !important;
+    gap: 3px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     z-index: 12 !important;
+  }
+  .jk-style-widow .ad-puzzle-title, .jk-style-widow .jk-puzzle-title {
+    font-size: 0.48rem !important;
+    margin-bottom: 2px !important;
+  }
+  .jk-style-widow .ad-choice-btn, .jk-style-widow .jk-choice-btn {
+    font-size: 0.45rem !important;
+    padding: 3px 1px !important;
+  }
+  .jk-style-widow .ad-puzzle-fail-stamp, .jk-style-widow .jk-puzzle-fail-stamp {
+    font-size: 0.45rem !important;
+    top: -12px !important;
+    right: -3px !important;
   }
 
   /* Chimichanga Horizontal Adjustment */
@@ -2334,6 +2350,13 @@ body.freeze-cursor, body.freeze-cursor * {
   }
   .ad-chimi-details {
     display: none !important;
+  }
+
+  /* Bugle Button Right-Top Shift for mobile */
+  .jk-style-bugle .jk-cta-btn {
+    top: 12px !important;
+    bottom: auto !important;
+    right: 12px !important;
   }
 
   /* 3. Disclaimer position on mobile (flows at the bottom of the scroll) */
