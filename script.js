@@ -570,7 +570,7 @@ const bannerTemplates = [
       <div class="jk-content" style="justify-content: space-around;">
         <div class="jk-logo-header">STARK IND.</div>
         <div class="jk-reactor-core"></div>
-        <div style="font-family: var(--font-sans); font-size: 0.8rem; font-weight: 800; color: #fff; text-shadow: 1px 1px 2px #000; text-align: center;">
+        <div class="jk-stark-text-group" style="font-family: var(--font-sans); font-size: 0.8rem; font-weight: 800; color: #fff; text-shadow: 1px 1px 2px #000; text-align: center;">
           WE WANT YOU!<br>
           <span class="jk-stark-neon" style="font-size: 0.65rem;">INTERN WANTED</span>
         </div>

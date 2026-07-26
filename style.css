@@ -2165,25 +2165,31 @@ body.freeze-cursor, body.freeze-cursor * {
     left: 12px !important;
     right: auto !important;
     transform: none !important;
+    display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 2px !important;
+    gap: 5px !important; /* Increased gap to prevent overlap */
     z-index: 12 !important;
     width: auto !important;
   }
 
   .ad-loki-ja, .jk-loki-ja {
     writing-mode: horizontal-tb !important;
-    font-size: 0.85rem !important;
+    font-size: 0.82rem !important; /* Slightly smaller to fit nicely */
     letter-spacing: 0px !important;
     display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.3 !important;
   }
 
   .ad-loki-en, .jk-loki-en {
     writing-mode: horizontal-tb !important;
     font-size: 0.5rem !important;
-    line-height: 1.2 !important;
+    line-height: 1.3 !important;
     display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   /* Jeff Horizontal Adjustment */
@@ -2201,15 +2207,23 @@ body.freeze-cursor, body.freeze-cursor * {
 
   /* Stark Horizontal Adjustment */
   .ad-style-stark .reactor-core, .jk-style-stark .jk-reactor-core {
-    display: none !important; /* Hide reactor core completely to save space */
-  }
-  .ad-style-stark .ad-content .ad-caption-plate,
-  .jk-style-stark .jk-content .jk-caption-plate {
+    display: flex !important; /* Restore reactor core display on mobile! */
+    width: 45px !important;
+    height: 45px !important;
     position: absolute !important;
-    bottom: 25px !important;
-    left: 12px !important;
-    width: auto !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
     z-index: 12 !important;
+  }
+  .jk-style-stark .jk-stark-text-group {
+    position: absolute !important;
+    left: 12px !important;
+    bottom: 25px !important;
+    text-align: left !important;
+    z-index: 12 !important;
+    width: auto !important;
   }
 
   /* Bugle Horizontal Adjustment */
@@ -2254,15 +2268,15 @@ body.freeze-cursor, body.freeze-cursor * {
     width: 55px !important; /* Size down to fit 150px height */
     height: auto !important;
     position: absolute !important;
-    left: 15px !important;
+    left: 50% !important; /* Center the emblem! */
     top: 50% !important;
-    transform: translateY(-50%) !important;
+    transform: translate(-50%, -50%) !important;
     z-index: 12 !important;
     display: block !important; /* Force show */
   }
   .ad-strange-text-group, .jk-strange-text-group {
     position: absolute !important;
-    left: 80px !important; /* Place next to the seal symbol */
+    left: 12px !important; /* Move text group to left bottom */
     bottom: 25px !important;
     display: flex !important;
     flex-direction: column !important;
