@@ -1055,296 +1055,7 @@ img.icon {
   z-index: 5;
 }
 
-/* Responsive: screen width < 1000px, show banners in a vertical layout and prevent vertical overflow */
-@media (max-width: 1000px) {
-  html, body {
-    overflow: hidden !important; /* Prevent page-wide scroll to avoid BSOD black gaps */
-    height: 100dvh !important;
-    width: 100vw !important;
-    background-color: var(--color-dp-black) !important; /* Force black background to prevent blue system bars on mobile */
-  }
 
-  /* Reset all containers to absolute stacking so they align at the top: 0 (No black gaps!) */
-  .phase-container {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100dvh !important;
-    z-index: 10 !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    display: none !important; /* Hide completely when inactive to prevent overlays */
-  }
-
-  .phase-container.active {
-    display: flex !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    z-index: 100 !important;
-  }
-
-  /* 1. Portal (Login) Mobile Layout */
-  #login-container {
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    gap: 15px;
-    padding: 15px 10px 100px 10px !important; /* Space at bottom for disclaimer */
-    overflow-y: auto !important; /* Allow scroll ONLY inside this active viewport container */
-    overflow-x: hidden !important;
-  }
-
-  .portal-card {
-    width: 100%;
-    max-width: 500px;
-    padding: 30px 18px;
-    margin: 10px 0;
-  }
-
-  /* SNS Login Buttons Mobile Sizing (Prevents right cutoff) */
-  .social-login-grid {
-    gap: 6px !important;
-  }
-
-  .btn-social {
-    padding: 10px 4px !important;
-    font-size: 0.68rem !important;
-    border-radius: 8px !important;
-    gap: 6px !important;
-  }
-
-  .btn-social .icon {
-    width: 32px !important;
-    height: 32px !important;
-  }
-
-  /* 2. Mobile Banner Layout (Horizontal 150px high) */
-  .parody-banner-container {
-    display: block !important;
-    width: 100% !important;
-    max-width: 500px;
-    height: 150px !important; /* Horizontal banner height */
-    margin: 10px auto !important;
-    border: 2px solid var(--color-dp-yellow);
-    box-shadow: 0 0 10px rgba(244, 208, 63, 0.15);
-  }
-
-  .parody-banner {
-    position: relative !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 2 !important;
-  }
-
-  /* Adjust banner child components to horizontal shape and pull to top layer */
-  .ad-content {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 10 !important; /* FORCE show text over the background image */
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 10px 12px !important;
-    box-sizing: border-box !important;
-  }
-
-  .ad-logo-header {
-    position: absolute !important;
-    top: 6px !important;
-    left: 10px !important;
-    font-size: 0.52rem !important;
-    padding: 2px 4px !important;
-    z-index: 12 !important;
-  }
-
-  .ad-cta-btn {
-    width: auto !important;
-    min-width: 110px;
-    margin: 0 !important;
-    font-size: 0.7rem !important;
-    padding: 5px 10px !important;
-    position: absolute !important;
-    bottom: 25px !important; /* Place above the bottom ribbon */
-    right: 12px !important;
-    z-index: 12 !important;
-  }
-
-  .ad-bottom-ribbon {
-    font-size: 0.48rem !important;
-    padding: 2px 4px !important;
-    z-index: 11 !important;
-  }
-
-  /* Loki Horizontal Adjustment */
-  .ad-loki-text-right-block {
-    position: absolute !important;
-    top: auto !important;
-    bottom: 25px !important; /* Place above the bottom ribbon */
-    left: 12px !important;
-    right: auto !important;
-    transform: none !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 4px !important;
-    z-index: 12 !important;
-  }
-
-  .ad-loki-ja {
-    writing-mode: horizontal-tb !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 0px !important;
-  }
-
-  .ad-loki-en {
-    writing-mode: horizontal-tb !important;
-    font-size: 0.5rem !important;
-    line-height: 1.2 !important;
-  }
-
-  /* Jeff Horizontal Adjustment */
-  .ad-style-jeff .ad-caption-plate {
-    position: absolute !important;
-    bottom: 25px !important; /* Place above the bottom ribbon */
-    left: 12px !important;
-    margin: 0 !important;
-    font-size: 0.6rem !important;
-    padding: 3px 6px !important;
-    z-index: 12 !important;
-  }
-
-  /* Stark Horizontal Adjustment */
-  .ad-style-stark .reactor-core {
-    display: none !important; /* Hide reactor image to make space on mobile */
-  }
-
-  /* Bugle Horizontal Adjustment */
-  .ad-bugle-breaking-bar {
-    bottom: 40px !important;
-    font-size: 0.48rem !important;
-  }
-
-  .ad-bugle-headline-plate {
-    bottom: 16px !important;
-    font-size: 0.65rem !important;
-    padding: 2px 4px !important;
-  }
-
-  /* Logan Horizontal Adjustment */
-  .ad-logan-discount-plate {
-    position: absolute !important;
-    bottom: 16px !important;
-    left: 12px !important;
-    width: 60% !important;
-    padding: 3px 2px !important;
-  }
-  .ad-logan-discount-title {
-    font-size: 0.58rem !important;
-  }
-  .ad-logan-discount-sub {
-    font-size: 0.48rem !important;
-  }
-
-  /* Strange Horizontal Adjustment */
-  .ad-strange-logo-img {
-    width: 70px !important;
-    position: absolute !important;
-    left: 15px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    z-index: 12 !important;
-  }
-  .ad-strange-text-group {
-    position: absolute !important;
-    left: 95px !important; /* Place next to the seal symbol */
-    bottom: 25px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 2px !important;
-    z-index: 12 !important;
-  }
-  .ad-strange-title {
-    font-size: 0.8rem !important;
-    font-weight: 800 !important;
-    color: #b8912e !important;
-  }
-  .ad-strange-sub {
-    font-size: 0.55rem !important;
-    color: #666 !important;
-  }
-
-  /* Widow Horizontal Adjustment */
-  .ad-widow-badge {
-    top: 8px !important;
-    left: auto !important;
-    right: 12px !important;
-    font-size: 0.48rem !important;
-  }
-  .ad-widow-puzzle-box {
-    position: absolute !important;
-    left: 15px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 70px !important;
-    height: 70px !important;
-  }
-
-  /* Chimichanga Horizontal Adjustment */
-  .ad-style-chimichanga .ad-chimi-center-plate {
-    padding: 4px 8px !important;
-    width: 55% !important;
-    left: 12px !important;
-    transform: translateY(-50%) !important;
-    font-size: 0.48rem !important;
-  }
-  .ad-chimi-title {
-    font-size: 0.58rem !important;
-  }
-  .ad-chimi-details {
-    display: none !important; /* Hide small details text to save space */
-  }
-
-  /* 3. Disclaimer position on mobile (flows at the bottom of the scroll) */
-  .site-disclaimer-container {
-    position: relative !important;
-    bottom: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    max-width: 500px;
-    margin: 20px auto 30px auto !important;
-    padding: 0 10px !important;
-  }
-
-  /* 4. BSOD Layout (Fixed viewport stack, no scroll) */
-  #bsod-container {
-    min-height: 100dvh !important;
-    height: 100dvh !important;
-    overflow-y: hidden !important;
-    align-items: center !important;
-    padding: 20px 10px !important;
-  }
-
-  /* 5. Jumpscare screamer sizing */
-  #jumpscare-container {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100dvw !important;
-    height: 100dvh !important;
-  }
-  
-  #jumpscare-img {
-    width: 100dvw !important;
-    height: 100dvh !important;
-    object-fit: cover !important;
-  }
-}
 
   /* Stark Horizontal Adjustment */
   .ad-style-stark .reactor-core {
@@ -2439,6 +2150,297 @@ body.freeze-cursor, body.freeze-cursor * {
 /* ==========================================================================
    RESPONSIVE DESIGN (Mobile & Tablet Support)
    ========================================================================== */
+
+/* Responsive: screen width < 1000px, show banners in a vertical layout and prevent vertical overflow */
+@media (max-width: 1000px) {
+  html, body {
+    overflow: hidden !important; /* Prevent page-wide scroll to avoid BSOD black gaps */
+    height: 100dvh !important;
+    width: 100vw !important;
+    background-color: var(--color-dp-black) !important; /* Force black background to prevent blue system bars on mobile */
+  }
+
+  /* Reset all containers to absolute stacking so they align at the top: 0 (No black gaps!) */
+  .phase-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    z-index: 10 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    display: none !important; /* Hide completely when inactive to prevent overlays */
+  }
+
+  .phase-container.active {
+    display: flex !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 100 !important;
+  }
+
+  /* 1. Portal (Login) Mobile Layout */
+  #login-container {
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 15px;
+    padding: 15px 10px 100px 10px !important; /* Space at bottom for disclaimer */
+    overflow-y: auto !important; /* Allow scroll ONLY inside this active viewport container */
+    overflow-x: hidden !important;
+  }
+
+  .portal-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 18px;
+    margin: 10px 0;
+  }
+
+  /* SNS Login Buttons Mobile Sizing (Prevents right cutoff) */
+  .social-login-grid {
+    gap: 6px !important;
+  }
+
+  .btn-social {
+    padding: 10px 4px !important;
+    font-size: 0.68rem !important;
+    border-radius: 8px !important;
+    gap: 6px !important;
+  }
+
+  .btn-social .icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  /* 2. Mobile Banner Layout (Horizontal 150px high) */
+  .parody-banner-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 500px;
+    height: 150px !important; /* Horizontal banner height */
+    margin: 10px auto !important;
+    border: 2px solid var(--color-dp-yellow);
+    box-shadow: 0 0 10px rgba(244, 208, 63, 0.15);
+  }
+
+  .parody-banner {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 2 !important;
+  }
+
+  /* Adjust banner child components to horizontal shape and pull to top layer */
+  .ad-content {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 10 !important; /* FORCE show text over the background image */
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .ad-logo-header {
+    position: absolute !important;
+    top: 6px !important;
+    left: 10px !important;
+    font-size: 0.52rem !important;
+    padding: 2px 4px !important;
+    z-index: 12 !important;
+  }
+
+  .ad-cta-btn {
+    width: auto !important;
+    min-width: 110px;
+    margin: 0 !important;
+    font-size: 0.7rem !important;
+    padding: 5px 10px !important;
+    position: absolute !important;
+    bottom: 25px !important; /* Place above the bottom ribbon */
+    right: 12px !important;
+    z-index: 12 !important;
+  }
+
+  .ad-bottom-ribbon {
+    font-size: 0.48rem !important;
+    padding: 2px 4px !important;
+    z-index: 11 !important;
+  }
+
+  /* Loki Horizontal Adjustment */
+  .ad-loki-text-right-block {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 25px !important; /* Place above the bottom ribbon */
+    left: 12px !important;
+    right: auto !important;
+    transform: none !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    z-index: 12 !important;
+  }
+
+  .ad-loki-ja {
+    writing-mode: horizontal-tb !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0px !important;
+  }
+
+  .ad-loki-en {
+    writing-mode: horizontal-tb !important;
+    font-size: 0.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Jeff Horizontal Adjustment */
+  .ad-style-jeff .ad-caption-plate {
+    position: absolute !important;
+    bottom: 25px !important; /* Place above the bottom ribbon */
+    left: 12px !important;
+    margin: 0 !important;
+    font-size: 0.6rem !important;
+    padding: 3px 6px !important;
+    z-index: 12 !important;
+  }
+
+  /* Stark Horizontal Adjustment */
+  .ad-style-stark .reactor-core {
+    display: none !important; /* Hide reactor image to make space on mobile */
+  }
+
+  /* Bugle Horizontal Adjustment */
+  .ad-bugle-breaking-bar {
+    bottom: 40px !important;
+    font-size: 0.48rem !important;
+  }
+
+  .ad-bugle-headline-plate {
+    bottom: 16px !important;
+    font-size: 0.65rem !important;
+    padding: 2px 4px !important;
+  }
+
+  /* Logan Horizontal Adjustment */
+  .ad-logan-discount-plate {
+    position: absolute !important;
+    bottom: 16px !important;
+    left: 12px !important;
+    width: 60% !important;
+    padding: 3px 2px !important;
+  }
+  .ad-logan-discount-title {
+    font-size: 0.58rem !important;
+  }
+  .ad-logan-discount-sub {
+    font-size: 0.48rem !important;
+  }
+
+  /* Strange Horizontal Adjustment */
+  .ad-strange-logo-img {
+    width: 70px !important;
+    position: absolute !important;
+    left: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 12 !important;
+  }
+  .ad-strange-text-group {
+    position: absolute !important;
+    left: 95px !important; /* Place next to the seal symbol */
+    bottom: 25px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    z-index: 12 !important;
+  }
+  .ad-strange-title {
+    font-size: 0.8rem !important;
+    font-weight: 800 !important;
+    color: #b8912e !important;
+  }
+  .ad-strange-sub {
+    font-size: 0.55rem !important;
+    color: #666 !important;
+  }
+
+  /* Widow Horizontal Adjustment */
+  .ad-widow-badge {
+    top: 8px !important;
+    left: auto !important;
+    right: 12px !important;
+    font-size: 0.48rem !important;
+  }
+  .ad-widow-puzzle-box {
+    position: absolute !important;
+    left: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  /* Chimichanga Horizontal Adjustment */
+  .ad-style-chimichanga .ad-chimi-center-plate {
+    padding: 4px 8px !important;
+    width: 55% !important;
+    left: 12px !important;
+    transform: translateY(-50%) !important;
+    font-size: 0.48rem !important;
+  }
+  .ad-chimi-title {
+    font-size: 0.58rem !important;
+    }
+  .ad-chimi-details {
+    display: none !important; /* Hide small details text to save space */
+  }
+
+  /* 3. Disclaimer position on mobile (flows at the bottom of the scroll) */
+  .site-disclaimer-container {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 500px;
+    margin: 20px auto 30px auto !important;
+    padding: 0 10px !important;
+  }
+
+  /* 4. BSOD Layout (Fixed viewport stack, no scroll) */
+  #bsod-container {
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+    overflow-y: hidden !important;
+    align-items: center !important;
+    padding: 20px 10px !important;
+  }
+
+  /* 5. Jumpscare screamer sizing */
+  #jumpscare-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100dvw !important;
+    height: 100dvh !important;
+  }
+  
+  #jumpscare-img {
+    width: 100dvw !important;
+    height: 100dvh !important;
+    object-fit: cover !important;
+  }
+}
 
 /* For tablets and smaller mobile devices (max-width: 768px) */
 @media (max-width: 768px) {
