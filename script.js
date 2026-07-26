@@ -550,17 +550,17 @@ const bannerTemplates = [
     `
   },
   {
-    styleClass: "ad-style-jeff",
+    styleClass: "jk-style-jeff",
     htmlContent: `
-      <img class="ad-bg-img" src="assets/ad_jeff.png" alt="Jeff the Land Shark">
-      <div class="ad-dark-overlay"></div>
-      <div class="ad-content">
-        <div class="ad-logo-header"><span class="cyan">Jeff</span> Pet Connect</div>
-        <div class="ad-caption-plate">WANT A CUTE<br>PET SHARK?</div>
-        <button class="ad-cta-btn">FEED & ADOPT</button>
+      <img class="jk-bg-img" src="assets/p_jeff.png" alt="Jeff the Land Shark">
+      <div class="jk-dark-overlay"></div>
+      <div class="jk-content">
+        <div class="jk-logo-header"><span class="cyan">Jeff</span> Pet Connect</div>
+        <div class="jk-caption-plate">WANT A CUTE<br>PET SHARK?</div>
+        <button class="jk-cta-btn">FEED & ADOPT</button>
       </div>
-      <div class="ad-bottom-ribbon">
-        <span class="ad-disclaimer-text">*Requires 10 chimichangas daily. Adopt Jeff today!</span>
+      <div class="jk-bottom-ribbon">
+        <span class="jk-disclaimer-text">*Requires 10 chimichangas daily. Adopt Jeff today!</span>
       </div>
     `
   },

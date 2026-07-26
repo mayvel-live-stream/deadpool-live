@@ -1071,7 +1071,7 @@ img.icon {
 }
 
 /* Background image filling the entire banner */
-.ad-bg-img {
+.ad-bg-img, .jk-bg-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -1083,7 +1083,8 @@ img.icon {
 }
 
 /* Smooth zoom-pulse animation for background character */
-.parody-banner.ad-style-jeff .ad-bg-img {
+.parody-banner.ad-style-jeff .ad-bg-img,
+.parody-banner.jk-style-jeff .jk-bg-img {
   animation: jeffBgPulse 4s ease-in-out infinite alternate;
 }
 
@@ -1102,7 +1103,7 @@ img.icon {
 }
 
 /* Transparent black overlay to make text readable */
-.ad-dark-overlay {
+.ad-dark-overlay, .jk-dark-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -1114,7 +1115,7 @@ img.icon {
 }
 
 /* Absolute content elements (on top of the image) */
-.ad-content {
+.ad-content, .jk-content {
   position: absolute;
   top: 0;
   left: 0;
@@ -1129,7 +1130,7 @@ img.icon {
 }
 
 /* Parody Logo Header at the top */
-.ad-logo-header {
+.ad-logo-header, .jk-logo-header {
   background: rgba(0, 0, 0, 0.7);
   border: 1.5px solid var(--color-dp-yellow);
   color: #fff;
@@ -1153,7 +1154,7 @@ img.icon {
 }
 
 /* Caption Plate (text bubble / card) in the middle */
-.ad-caption-plate {
+.ad-caption-plate, .jk-caption-plate {
   background: rgba(255, 255, 255, 0.95);
   border: 2px solid #000;
   border-radius: 6px;
@@ -1184,7 +1185,7 @@ img.icon {
 }
 
 /* Call to action button */
-.ad-cta-btn {
+.ad-cta-btn, .jk-cta-btn {
   background: linear-gradient(to bottom, #f4d03f 0%, #d4ac0d 100%);
   color: #000;
   border: 2px solid #000;
@@ -1218,7 +1219,7 @@ img.icon {
 }
 
 /* Bottom Ribbon (notice bar) */
-.ad-bottom-ribbon {
+.ad-bottom-ribbon, .jk-bottom-ribbon {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1234,7 +1235,7 @@ img.icon {
   white-space: nowrap;
 }
 
-.ad-style-jeff .ad-bottom-ribbon {
+.ad-style-jeff .ad-bottom-ribbon, .jk-style-jeff .jk-bottom-ribbon {
   background-color: #1b355a;
 }
 
@@ -1242,7 +1243,7 @@ img.icon {
   background-color: #4a154b;
 }
 
-.ad-disclaimer-text {
+.ad-disclaimer-text, .jk-disclaimer-text {
   display: inline-block;
   animation: adTicker 10s linear infinite;
   padding-left: 100%;
@@ -1555,19 +1556,19 @@ body.freeze-cursor, body.freeze-cursor * {
 
 
 /* Jeff (Pop Indie Style): Fredoka font, rounded bubbly look */
-.parody-banner.ad-style-jeff {
+.parody-banner.ad-style-jeff, .parody-banner.jk-style-jeff {
   font-family: 'Fredoka', sans-serif;
   border-color: #00bfff;
   box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
 }
 
-.parody-banner.ad-style-jeff .ad-logo-header {
+.parody-banner.ad-style-jeff .ad-logo-header, .parody-banner.jk-style-jeff .jk-logo-header {
   border-color: #00bfff;
   color: #00bfff;
   text-shadow: 0 0 4px rgba(0, 191, 255, 0.6);
 }
 
-.parody-banner.ad-style-jeff .ad-caption-plate {
+.parody-banner.ad-style-jeff .ad-caption-plate, .parody-banner.jk-style-jeff .jk-caption-plate {
   background: rgba(255, 255, 255, 0.95);
   border: 2px solid #000;
   border-radius: 8px;
@@ -1577,7 +1578,7 @@ body.freeze-cursor, body.freeze-cursor * {
   font-size: 0.85rem;
 }
 
-.parody-banner.ad-style-jeff .ad-cta-btn {
+.parody-banner.ad-style-jeff .ad-cta-btn, .parody-banner.jk-style-jeff .jk-cta-btn {
   background: linear-gradient(to bottom, #00bfff 0%, #008b8b 100%);
   color: #fff;
 }
@@ -2106,7 +2107,7 @@ body.freeze-cursor, body.freeze-cursor * {
   }
 
   /* Force absolute overlay for mobile banner contents to prevent Flexbox push-out bugs */
-  .ad-content {
+  .ad-content, .jk-content {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
@@ -2119,7 +2120,7 @@ body.freeze-cursor, body.freeze-cursor * {
   }
 
   /* Common header for all ads */
-  .ad-logo-header {
+  .ad-logo-header, .jk-logo-header {
     position: absolute !important;
     top: 6px !important;
     left: 10px !important;
@@ -2131,7 +2132,7 @@ body.freeze-cursor, body.freeze-cursor * {
   }
 
   /* Common CTA Button for all ads */
-  .ad-cta-btn {
+  .ad-cta-btn, .jk-cta-btn {
     position: absolute !important;
     bottom: 25px !important; /* Place above the bottom ribbon (height: 20px) */
     right: 12px !important;
@@ -2144,7 +2145,7 @@ body.freeze-cursor, body.freeze-cursor * {
     z-index: 12 !important;
   }
 
-  .ad-bottom-ribbon {
+  .ad-bottom-ribbon, .jk-bottom-ribbon {
     font-size: 0.48rem !important;
     padding: 2px 4px !important;
     z-index: 11 !important;
@@ -2185,7 +2186,8 @@ body.freeze-cursor, body.freeze-cursor * {
   }
 
   /* Jeff Horizontal Adjustment */
-  .ad-style-jeff .ad-caption-plate {
+  .ad-style-jeff .ad-caption-plate,
+  .jk-style-jeff .jk-caption-plate {
     position: absolute !important;
     bottom: 25px !important;
     left: 12px !important;
