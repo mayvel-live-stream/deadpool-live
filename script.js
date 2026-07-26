@@ -699,10 +699,8 @@ function renderRandomBanners() {
   
   if (!bannerLeft || !bannerRight) return;
   
-  // Shuffle and pick 2 unique banners
+  // Shuffle all templates
   const shuffled = [...bannerTemplates].sort(() => 0.5 - Math.random());
-  const leftData = shuffled[0];
-  const rightData = shuffled[1];
   
   const createBannerHTML = (data) => `
     <div class="parody-banner ${data.styleClass}">
@@ -710,8 +708,19 @@ function renderRandomBanners() {
     </div>
   `;
   
-  bannerLeft.innerHTML = createBannerHTML(leftData);
-  bannerRight.innerHTML = createBannerHTML(rightData);
+  // Detect mobile screen width
+  const isMobile = window.innerWidth <= 1000;
+  
+  if (isMobile && shuffled.length >= 4) {
+    // On mobile, show 2 banners on top (left container) and 2 banners on bottom (right container)
+    // for a rich, spammy vertical scroll experience with 4 unique ads!
+    bannerLeft.innerHTML = createBannerHTML(shuffled[0]) + createBannerHTML(shuffled[1]);
+    bannerRight.innerHTML = createBannerHTML(shuffled[2]) + createBannerHTML(shuffled[3]);
+  } else {
+    // On PC, just show 1 banner on the left and 1 banner on the right
+    bannerLeft.innerHTML = createBannerHTML(shuffled[0]);
+    bannerRight.innerHTML = createBannerHTML(shuffled[1]);
+  }
 }
 
 // ==========================================================================
