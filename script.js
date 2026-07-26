@@ -532,20 +532,20 @@ function resetPrank() {
 // ==========================================================================
 const bannerTemplates = [
   {
-    styleClass: "ad-style-loki",
+    styleClass: "jk-style-loki",
     htmlContent: `
-      <img class="ad-bg-img" src="assets/ad_loki.png" alt="Loki">
-      <div class="ad-dark-overlay"></div>
-      <div class="ad-content">
-        <div class="ad-logo-header"><span class="pink">Loki</span> Games Connect</div>
-        <div class="ad-loki-text-right-block">
-          <div class="ad-loki-ja">私の配下になれ♡</div>
-          <div class="ad-loki-en">BECOME MY<br>SUBORDINATE!</div>
+      <img class="jk-bg-img" src="assets/p_loki.png" alt="Loki">
+      <div class="jk-dark-overlay"></div>
+      <div class="jk-content">
+        <div class="jk-logo-header"><span class="pink">Loki</span> Games Connect</div>
+        <div class="jk-loki-text-right-block">
+          <div class="jk-loki-ja">私の配下になれ♡</div>
+          <div class="jk-loki-en">BECOME MY<br>SUBORDINATE!</div>
         </div>
-        <button class="ad-cta-btn">配下になる<br><span style="font-size:0.55rem; font-weight:normal; display:block; margin-top:1px;">Submit to Loki</span></button>
+        <button class="jk-cta-btn">配下になる<br><span style="font-size:0.55rem; font-weight:normal; display:block; margin-top:1px;">Submit to Loki</span></button>
       </div>
-      <div class="ad-bottom-ribbon">
-        <span class="ad-disclaimer-text">※ゲーム本編では男性です / *Note: He is male in the main game.</span>
+      <div class="jk-bottom-ribbon">
+        <span class="jk-disclaimer-text">※ゲーム本編では男性です / *Note: He is male in the main game.</span>
       </div>
     `
   },
@@ -565,42 +565,42 @@ const bannerTemplates = [
     `
   },
   {
-    styleClass: "ad-style-stark flash-red",
+    styleClass: "jk-style-stark flash-red",
     htmlContent: `
-      <div class="ad-content" style="justify-content: space-around;">
-        <div class="ad-logo-header">STARK IND.</div>
-        <div class="reactor-core"></div>
+      <div class="jk-content" style="justify-content: space-around;">
+        <div class="jk-logo-header">STARK IND.</div>
+        <div class="jk-reactor-core"></div>
         <div style="font-family: var(--font-sans); font-size: 0.8rem; font-weight: 800; color: #fff; text-shadow: 1px 1px 2px #000; text-align: center;">
           WE WANT YOU!<br>
-          <span class="ad-stark-neon" style="font-size: 0.65rem;">INTERN WANTED</span>
+          <span class="jk-stark-neon" style="font-size: 0.65rem;">INTERN WANTED</span>
         </div>
-        <button class="ad-cta-btn" style="margin-bottom: 0;">Apply & Explode</button>
+        <button class="jk-cta-btn" style="margin-bottom: 0;">Apply & Explode</button>
       </div>
-      <div class="ad-bottom-ribbon">
-        <span class="ad-disclaimer-text">※研究所の爆発生存率：45% (Lab explosion survival rate: 45%)</span>
+      <div class="jk-bottom-ribbon">
+        <span class="jk-disclaimer-text">※研究所の爆発生存率：45% (Lab explosion survival rate: 45%)</span>
       </div>
     `
   },
   {
-    styleClass: "ad-style-bugle",
+    styleClass: "jk-style-bugle",
     htmlContent: `
-      <img class="ad-bg-img" src="assets/ad_bugle.png" alt="Spider-Man Press Conference">
-      <div class="ad-dark-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 50%, rgba(0,0,0,0.6) 100%);"></div>
+      <img class="jk-bg-img" src="assets/p_bugle.png" alt="Spider-Man Press Conference">
+      <div class="jk-dark-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 50%, rgba(0,0,0,0.6) 100%);"></div>
       
       <div class="ad-bugle-breaking-bar">BREAKING NEWS</div>
       <div class="ad-bugle-headline-plate">SPIDER-MAN RETIRES?!</div>
 
-      <div class="ad-content" style="justify-content: space-between; padding-bottom: 25px;">
-        <div class="ad-logo-header">BUGLE EXCLUSIVE</div>
-        <button class="ad-cta-btn" style="margin-bottom: 0; background: #d32f2f; color: #fff; border-color: #fff; font-weight: 900; box-shadow: 3px 3px 0 #000; font-size: 0.72rem;">WATCH LIVE</button>
+      <div class="jk-content" style="justify-content: space-between; padding-bottom: 25px;">
+        <div class="jk-logo-header">BUGLE EXCLUSIVE</div>
+        <button class="jk-cta-btn" style="margin-bottom: 0; background: #d32f2f; color: #fff; border-color: #fff; font-weight: 900; box-shadow: 3px 3px 0 #000; font-size: 0.72rem;">WATCH LIVE</button>
       </div>
-      <div class="ad-bottom-ribbon" style="background-color: #111; border-top-color: #d32f2f;">
-        <span class="ad-disclaimer-text">*Bugle Exclusive: Inside sources claim he is tired of swinging. J. Jonah Jameson says "Good Riddance!"</span>
+      <div class="jk-bottom-ribbon" style="background-color: #111; border-top-color: #d32f2f;">
+        <span class="jk-disclaimer-text">*Bugle Exclusive: Inside sources claim he is tired of swinging. J. Jonah Jameson says "Good Riddance!"</span>
       </div>
     `
   },
   {
-    styleClass: "ad-style-chimichanga",
+    styleClass: "jk-style-chimichanga",
     htmlContent: `
       <div class="ad-chimi-grid">
         <img src="assets/ad_chimi_classic.png" alt="Classic">
@@ -608,7 +608,7 @@ const bannerTemplates = [
         <img src="assets/ad_chimi_cheese.png" alt="Cheese">
         <img src="assets/ad_chimi_guac.png" alt="Guacamole">
       </div>
-      <div class="ad-dark-overlay" style="background: rgba(0,0,0,0.15); z-index: 2;"></div>
+      <div class="jk-dark-overlay" style="background: rgba(0,0,0,0.15); z-index: 2;"></div>
       
       <div class="ad-chimi-center-plate">
         <div class="ad-chimi-tag">SPECIAL COLLAB</div>
@@ -617,63 +617,63 @@ const bannerTemplates = [
         <div class="ad-chimi-location">NEAR BROOKLYN SUBWAY</div>
       </div>
 
-      <div class="ad-content" style="justify-content: flex-end; padding-bottom: 25px; z-index: 3; pointer-events: none;">
-        <button class="ad-cta-btn" style="margin-bottom: 0; background: linear-gradient(to bottom, #ffeb3b 0%, #fbc02d 100%); color: #000; border-color: #000; font-weight: 900; box-shadow: 3px 3px 0 #000; font-size: 0.72rem; pointer-events: auto;">ORDER NOW!</button>
+      <div class="jk-content" style="justify-content: flex-end; padding-bottom: 25px; z-index: 3; pointer-events: none;">
+        <button class="jk-cta-btn" style="margin-bottom: 0; background: linear-gradient(to bottom, #ffeb3b 0%, #fbc02d 100%); color: #000; border-color: #000; font-weight: 900; box-shadow: 3px 3px 0 #000; font-size: 0.72rem; pointer-events: auto;">ORDER NOW!</button>
       </div>
-      <div class="ad-bottom-ribbon" style="background-color: #e50914; border-top-color: #ffeb3b; z-index: 3;">
-        <span class="ad-disclaimer-text">*Limited Time Only! Deadpool's special collab menu is now available.</span>
+      <div class="jk-bottom-ribbon" style="background-color: #e50914; border-top-color: #ffeb3b; z-index: 3;">
+        <span class="jk-disclaimer-text">*Limited Time Only! Deadpool's special collab menu is now available.</span>
       </div>
     `
   },
   {
-    styleClass: "ad-style-logan-new",
+    styleClass: "jk-style-logan-new",
     htmlContent: `
-      <img class="ad-bg-img" src="assets/ad_logan.png" alt="Mutant Regrowth Tonic">
-      <div class="ad-dark-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 60%, rgba(0,0,0,0.7) 100%);"></div>
+      <img class="jk-bg-img" src="assets/p_logan.png" alt="Mutant Regrowth Tonic">
+      <div class="jk-dark-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 60%, rgba(0,0,0,0.7) 100%);"></div>
       
       <div class="ad-logan-discount-plate">
         <div class="ad-logan-discount-title">50% OFF TODAY!</div>
         <div class="ad-logan-discount-sub">FREE SHIPPING WORLDWIDE!</div>
       </div>
 
-      <div class="ad-content" style="justify-content: space-between; padding-bottom: 25px;">
-        <div class="ad-logo-header">HEALING FACTOR AGA</div>
-        <button class="ad-cta-btn" style="margin-bottom: 0; background: linear-gradient(to bottom, #ffeb3b 0%, #fbc02d 100%); color: #000; border-color: #000; font-weight: 900; box-shadow: 3px 3px 0 #000; font-size: 0.72rem;">CLAIM OFFER</button>
+      <div class="jk-content" style="justify-content: space-between; padding-bottom: 25px;">
+        <div class="jk-logo-header">HEALING FACTOR AGA</div>
+        <button class="jk-cta-btn" style="margin-bottom: 0; background: linear-gradient(to bottom, #ffeb3b 0%, #fbc02d 100%); color: #000; border-color: #000; font-weight: 900; box-shadow: 3px 3px 0 #000; font-size: 0.72rem;">CLAIM OFFER</button>
       </div>
-      <div class="ad-bottom-ribbon" style="background-color: #111; border-top-color: #ffeb3b;">
-        <span class="ad-disclaimer-text">*Warning: Healing factor formula may cause rapid hair growth. Logan certified product.</span>
+      <div class="jk-bottom-ribbon" style="background-color: #111; border-top-color: #ffeb3b;">
+        <span class="jk-disclaimer-text">*Warning: Healing factor formula may cause rapid hair growth. Logan certified product.</span>
       </div>
     `
   },
   {
-    styleClass: "ad-style-strange",
+    styleClass: "jk-style-strange",
     htmlContent: `
-      <div class="ad-content" style="justify-content: space-around; background: #ffffff;">
-        <div class="ad-logo-header" style="border-color: #e5c158; color: #b8912e; background: rgba(229, 193, 88, 0.08); font-size: 0.55rem; letter-spacing: 0.2px; padding: 4px 2px;">REPORT FROM DR. STRANGE</div>
+      <div class="jk-content" style="justify-content: space-around; background: #ffffff;">
+        <div class="jk-logo-header" style="border-color: #e5c158; color: #b8912e; background: rgba(229, 193, 88, 0.08); font-size: 0.55rem; letter-spacing: 0.2px; padding: 4px 2px;">REPORT FROM DR. STRANGE</div>
         <div class="strange-logo-wrapper" style="text-align: center; margin: 3px 0;">
-          <img class="ad-strange-logo-img" src="assets/ad_strange.png" alt="Strange Emblem">
+          <img class="jk-strange-logo-img" src="assets/p_strange.png" alt="Strange Emblem">
         </div>
         <div style="font-family: 'Fredoka', sans-serif; font-size: 0.72rem; font-weight: 800; color: #111; text-align: center; line-height: 1.35;">
           PREVENT DEMISE!<br>
           <span style="color: #c0392b; font-size: 0.52rem; display: block; margin-top: 3px; font-weight: 700; letter-spacing: 0.5px;">SANCTUM LIFE INSURANCE</span>
         </div>
-        <button class="ad-cta-btn" style="margin-bottom: 0; background: #111; color: #fff; border-color: #111; box-shadow: 3px 3px 0 #000; font-size: 0.75rem; font-weight: 900;">ENLIST NOW</button>
+        <button class="jk-cta-btn" style="margin-bottom: 0; background: #111; color: #fff; border-color: #111; box-shadow: 3px 3px 0 #000; font-size: 0.75rem; font-weight: 900;">ENLIST NOW</button>
       </div>
-      <div class="ad-bottom-ribbon" style="background-color: #111; border-top-color: #e5c158;">
-        <span class="ad-disclaimer-text">*Note: Demise in the Dark Dimension is not covered. Terms apply.</span>
+      <div class="jk-bottom-ribbon" style="background-color: #111; border-top-color: #e5c158;">
+        <span class="jk-disclaimer-text">*Note: Demise in the Dark Dimension is not covered. Terms apply.</span>
       </div>
     `
   },
   {
-    styleClass: "ad-style-widow",
+    styleClass: "jk-style-widow",
     htmlContent: `
-      <img class="ad-bg-img" src="assets/ad_widow.png" alt="Black Widow">
-      <div class="ad-dark-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 60%, rgba(0,0,0,0.6) 100%);"></div>
+      <img class="jk-bg-img" src="assets/p_widow.png" alt="Black Widow">
+      <div class="jk-dark-overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 60%, rgba(0,0,0,0.6) 100%);"></div>
       
       <div class="ad-widow-badge">LV.99 WIDOW</div>
 
-      <div class="ad-content">
-        <div class="ad-logo-header">LAST SURVIVAL: 3D</div>
+      <div class="jk-content">
+        <div class="jk-logo-header">LAST SURVIVAL: 3D</div>
         
         <div class="ad-widow-puzzle-box">
           <div class="ad-puzzle-fail-stamp">FAILED!</div>
@@ -684,10 +684,10 @@ const bannerTemplates = [
           </div>
         </div>
 
-        <button class="ad-cta-btn" style="margin-bottom: 25px; background: linear-gradient(to bottom, #ffeb3b 0%, #fbc02d 100%); color: #000; border-color: #000; font-weight: 900; box-shadow: 3px 3px 0 #000;">PLAY FREE NOW</button>
+        <button class="jk-cta-btn" style="margin-bottom: 25px; background: linear-gradient(to bottom, #ffeb3b 0%, #fbc02d 100%); color: #000; border-color: #000; font-weight: 900; box-shadow: 3px 3px 0 #000;">PLAY FREE NOW</button>
       </div>
-      <div class="ad-bottom-ribbon" style="background-color: #000; border-top-color: #4caf50;">
-        <span class="ad-disclaimer-text">*Actual gameplay may vary from the advertisement. Strictly 18+.</span>
+      <div class="jk-bottom-ribbon" style="background-color: #000; border-top-color: #4caf50;">
+        <span class="jk-disclaimer-text">*Actual gameplay may vary from the advertisement. Strictly 18+.</span>
       </div>
     `
   }

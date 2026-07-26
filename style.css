@@ -1088,7 +1088,8 @@ img.icon {
   animation: jeffBgPulse 4s ease-in-out infinite alternate;
 }
 
-.parody-banner.ad-style-loki .ad-bg-img {
+.parody-banner.ad-style-loki .ad-bg-img,
+.parody-banner.jk-style-loki .jk-bg-img {
   animation: lokiBgPulse 5s ease-in-out infinite alternate;
 }
 
@@ -1350,19 +1351,19 @@ body.freeze-cursor, body.freeze-cursor * {
 }
 
 /* Background gradient shift for banner ads */
-.parody-banner.ad-style-jeff {
+.parody-banner.ad-style-jeff, .parody-banner.jk-style-jeff {
   background: linear-gradient(135deg, #0e1a2f, #1b355a, #0b111e);
   background-size: 200% 200%;
   animation: bgGradientMove 5s ease infinite;
 }
 
-.parody-banner.ad-style-stark {
+.parody-banner.ad-style-stark, .parody-banner.jk-style-stark {
   background: linear-gradient(135deg, #2a080c, #130305, #000000);
   background-size: 200% 200%;
   animation: bgGradientMove 4s ease infinite;
 }
 
-.parody-banner.ad-style-logan {
+.parody-banner.ad-style-logan, .parody-banner.jk-style-logan-new {
   background: linear-gradient(135deg, #2c2105, #140f02, #000000);
   background-size: 200% 200%;
   animation: bgGradientMove 6s ease infinite;
@@ -1375,7 +1376,7 @@ body.freeze-cursor, body.freeze-cursor * {
 }
 
 /* Stark Neon blink */
-.ad-stark-neon {
+.ad-stark-neon, .jk-stark-neon {
   color: #ff3344;
   text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
   animation: starkBlink 0.6s infinite alternate steps(2);
@@ -1387,7 +1388,7 @@ body.freeze-cursor, body.freeze-cursor * {
 }
 
 /* Wolverine slash light effect */
-.ad-style-logan::before {
+.ad-style-logan::before, .jk-style-logan-new::before {
   content: "";
   position: absolute;
   top: -100%;
@@ -1457,7 +1458,7 @@ body.freeze-cursor, body.freeze-cursor * {
 }
 
 /* Stark Reactor core CSS graphic */
-.reactor-core {
+.reactor-core, .jk-reactor-core {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -1487,19 +1488,19 @@ body.freeze-cursor, body.freeze-cursor * {
    SPECIFIC AD FONTS & EFFECTS (Loki & Jeff)
    ========================================================================== */
 /* Loki (Eroge Style): Noto Serif JP明朝体, vertical text on both sides of the face, pink glow */
-.parody-banner.ad-style-loki {
+.parody-banner.ad-style-loki, .parody-banner.jk-style-loki {
   border-color: #ff007f;
   box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
 }
 
-.parody-banner.ad-style-loki .ad-logo-header {
+.parody-banner.ad-style-loki .ad-logo-header, .parody-banner.jk-style-loki .jk-logo-header {
   border-color: #ff007f;
   color: #ff007f;
   text-shadow: 0 0 4px rgba(255, 0, 127, 0.6);
 }
 
 /* Absolute block container on the right side of Loki's face */
-.ad-loki-text-right-block {
+.ad-loki-text-right-block, .jk-loki-text-right-block {
   position: absolute;
   top: 15%;
   right: 14px;
@@ -1513,7 +1514,7 @@ body.freeze-cursor, body.freeze-cursor * {
 }
 
 /* Japanese vertical text on the right block */
-.ad-loki-ja {
+.ad-loki-ja, .jk-loki-ja {
   writing-mode: vertical-rl;
   text-orientation: upright;
   font-family: 'Noto Serif JP', 'Shippori Mincho', serif;
@@ -1533,7 +1534,7 @@ body.freeze-cursor, body.freeze-cursor * {
 }
 
 /* English vertical text below the Japanese text */
-.ad-loki-en {
+.ad-loki-en, .jk-loki-en {
   writing-mode: vertical-rl;
   text-orientation: upright; /* Straight vertical English characters */
   font-family: 'Noto Serif JP', serif; /* Noto Serif JP unified */
@@ -1584,34 +1585,34 @@ body.freeze-cursor, body.freeze-cursor * {
 }
 
 /* Strange (Magic Insurance Style): Gold borders, pure white background, static red logo */
-.parody-banner.ad-style-strange {
+.parody-banner.ad-style-strange, .parody-banner.jk-style-strange {
   font-family: 'Fredoka', sans-serif;
   border-color: #e5c158;
   box-shadow: 0 0 15px rgba(229, 193, 88, 0.25);
   background-color: #ffffff;
 }
 
-.parody-banner.ad-style-strange .ad-logo-header {
+.parody-banner.ad-style-strange .ad-logo-header, .parody-banner.jk-style-strange .jk-logo-header {
   border-color: #e5c158;
   color: #b8912e; /* Darker gold for readability on white bg */
   background-color: rgba(229, 193, 88, 0.1);
   text-shadow: none;
 }
 
-.ad-strange-logo-img {
+.ad-strange-logo-img, .jk-strange-logo-img {
   width: 115px; /* Increased size to make symbol clearer */
   height: auto;
   /* Red aura drop-shadow removed for a flat clean vector look */
 }
 
 /* Widow (Cheap Chinese Zombie Game Ad Style - 37GAMES/FirstFun parody) */
-.parody-banner.ad-style-widow {
+.parody-banner.ad-style-widow, .parody-banner.jk-style-widow {
   font-family: 'Fredoka', sans-serif;
   border-color: #4caf50; /* Green borders */
   box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
 }
 
-.parody-banner.ad-style-widow .ad-logo-header {
+.parody-banner.ad-style-widow .ad-logo-header, .parody-banner.jk-style-widow .jk-logo-header {
   border-color: #f44336;
   color: #fff;
   background-color: #f44336;
@@ -1802,7 +1803,7 @@ body.freeze-cursor, body.freeze-cursor * {
   text-shadow: none;
 }
 
-.ad-logan-discount-plate {
+.ad-logan-discount-plate, .jk-logan-discount-plate {
   position: absolute;
   bottom: 22%;
   left: 5%;
@@ -1818,7 +1819,7 @@ body.freeze-cursor, body.freeze-cursor * {
   box-shadow: 0 4px 8px rgba(0,0,0,0.6);
 }
 
-.ad-logan-discount-title {
+.ad-logan-discount-title, .jk-logan-discount-title {
   color: #ffeb3b;
   font-size: 0.65rem;
   font-weight: 900;
@@ -1826,7 +1827,7 @@ body.freeze-cursor, body.freeze-cursor * {
   text-shadow: 1px 1px 0 #000;
 }
 
-.ad-logan-discount-sub {
+.ad-logan-discount-sub, .jk-logan-discount-sub {
   color: #4caf50; /* Green free/discount text */
   font-size: 0.52rem;
   font-weight: 800;
@@ -2157,7 +2158,7 @@ body.freeze-cursor, body.freeze-cursor * {
   }
 
   /* Loki Horizontal Adjustment */
-  .ad-loki-text-right-block {
+  .ad-loki-text-right-block, .jk-loki-text-right-block {
     position: absolute !important;
     top: auto !important;
     bottom: 25px !important; /* Align with the CTA button */
@@ -2171,14 +2172,14 @@ body.freeze-cursor, body.freeze-cursor * {
     width: auto !important;
   }
 
-  .ad-loki-ja {
+  .ad-loki-ja, .jk-loki-ja {
     writing-mode: horizontal-tb !important;
     font-size: 0.85rem !important;
     letter-spacing: 0px !important;
     display: block !important;
   }
 
-  .ad-loki-en {
+  .ad-loki-en, .jk-loki-en {
     writing-mode: horizontal-tb !important;
     font-size: 0.5rem !important;
     line-height: 1.2 !important;
@@ -2199,10 +2200,11 @@ body.freeze-cursor, body.freeze-cursor * {
   }
 
   /* Stark Horizontal Adjustment */
-  .ad-style-stark .reactor-core {
+  .ad-style-stark .reactor-core, .jk-style-stark .jk-reactor-core {
     display: none !important; /* Hide reactor core completely to save space */
   }
-  .ad-style-stark .ad-content .ad-caption-plate {
+  .ad-style-stark .ad-content .ad-caption-plate,
+  .jk-style-stark .jk-content .jk-caption-plate {
     position: absolute !important;
     bottom: 25px !important;
     left: 12px !important;
@@ -2231,7 +2233,7 @@ body.freeze-cursor, body.freeze-cursor * {
   }
 
   /* Logan Horizontal Adjustment */
-  .ad-logan-discount-plate {
+  .ad-logan-discount-plate, .jk-logan-discount-plate {
     position: absolute !important;
     bottom: 25px !important;
     left: 12px !important;
@@ -2240,15 +2242,15 @@ body.freeze-cursor, body.freeze-cursor * {
     padding: 3px 6px !important;
     z-index: 12 !important;
   }
-  .ad-logan-discount-title {
+  .ad-logan-discount-title, .jk-logan-discount-title {
     font-size: 0.58rem !important;
   }
-  .ad-logan-discount-sub {
+  .ad-logan-discount-sub, .jk-logan-discount-sub {
     font-size: 0.48rem !important;
   }
 
   /* Strange Horizontal Adjustment */
-  .ad-strange-logo-img {
+  .ad-strange-logo-img, .jk-strange-logo-img {
     width: 55px !important; /* Size down to fit 150px height */
     height: auto !important;
     position: absolute !important;
@@ -2258,7 +2260,7 @@ body.freeze-cursor, body.freeze-cursor * {
     z-index: 12 !important;
     display: block !important; /* Force show */
   }
-  .ad-strange-text-group {
+  .ad-strange-text-group, .jk-strange-text-group {
     position: absolute !important;
     left: 80px !important; /* Place next to the seal symbol */
     bottom: 25px !important;
@@ -2269,20 +2271,20 @@ body.freeze-cursor, body.freeze-cursor * {
     z-index: 12 !important;
     width: auto !important;
   }
-  .ad-strange-title {
+  .ad-strange-title, .jk-strange-title {
     font-size: 0.8rem !important;
     font-weight: 800 !important;
     color: #b8912e !important;
     display: block !important;
   }
-  .ad-strange-sub {
+  .ad-strange-sub, .jk-strange-sub {
     font-size: 0.55rem !important;
     color: #666 !important;
     display: block !important;
   }
 
   /* Widow Horizontal Adjustment */
-  .ad-widow-badge {
+  .ad-widow-badge, .jk-widow-badge {
     position: absolute !important;
     top: 8px !important;
     left: auto !important;
@@ -2290,7 +2292,7 @@ body.freeze-cursor, body.freeze-cursor * {
     font-size: 0.48rem !important;
     z-index: 12 !important;
   }
-  .ad-widow-puzzle-box {
+  .ad-widow-puzzle-box, .jk-widow-puzzle-box {
     position: absolute !important;
     left: 15px !important;
     top: 50% !important;
@@ -2301,7 +2303,8 @@ body.freeze-cursor, body.freeze-cursor * {
   }
 
   /* Chimichanga Horizontal Adjustment */
-  .ad-style-chimichanga .ad-chimi-center-plate {
+  .ad-style-chimichanga .ad-chimi-center-plate,
+  .jk-style-chimichanga .ad-chimi-center-plate {
     position: absolute !important;
     top: 50% !important;
     left: 12px !important;
