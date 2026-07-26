@@ -145,6 +145,9 @@ function playGlitchSound() {
 function transitionToPhase(fromContainer, toContainer) {
   fromContainer.classList.remove('active');
   toContainer.classList.add('active');
+  // Reset scroll offsets to top to prevent black screen gaps on mobile
+  toContainer.scrollTop = 0;
+  window.scrollTo(0, 0);
 }
 
 // Run Phase 2: BSoD Percent Counter (Slower to allow reading)
@@ -460,6 +463,9 @@ function stopFloodAndTransition() {
       bsodContainer.classList.remove('active');
       desktopContainer.classList.remove('active');
       warningContainer.classList.add('active');
+      // Reset scroll offsets to top to prevent black screen gaps on mobile
+      warningContainer.scrollTop = 0;
+      window.scrollTo(0, 0);
       desktopContainer.innerHTML = '';
     }, 1800); // Sync image hide and audio stop at 1.8s
   }, 3500); // 3.5 seconds pause (the "間")

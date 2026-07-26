@@ -1058,30 +1058,39 @@ img.icon {
 /* Responsive: screen width < 1000px, show banners in a vertical layout and prevent vertical overflow */
 @media (max-width: 1000px) {
   html, body {
-    overflow-y: auto !important; /* Allow scroll globally on mobile if content overflows */
-    overflow-x: hidden !important;
-    height: auto !important;
-    min-height: 100% !important;
+    overflow: hidden !important; /* Prevent page-wide scroll to avoid BSOD black gaps */
+    height: 100dvh !important;
+    width: 100vw !important;
   }
 
+  /* Reset all containers to absolute stacking so they align at the top: 0 (No black gaps!) */
   .phase-container {
-    height: auto !important;
-    min-height: 100dvh !important;
-    position: relative !important; /* Let content push height instead of absolute screen locking */
-    overflow-y: visible !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    z-index: 10 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    display: none !important; /* Hide completely when inactive to prevent overlays */
+  }
+
+  .phase-container.active {
+    display: flex !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 100 !important;
   }
 
   /* 1. Portal (Login) Mobile Layout */
   #login-container {
-    position: relative !important;
-    height: auto !important;
-    min-height: 100dvh !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: center !important;
     gap: 15px;
     padding: 15px 10px 100px 10px !important; /* Space at bottom for disclaimer */
-    overflow-y: visible !important; /* Overwrite standard hidden container */
+    overflow-y: auto !important; /* Allow scroll ONLY inside this active viewport container */
     overflow-x: hidden !important;
   }
 
@@ -1189,6 +1198,135 @@ img.icon {
     padding: 3px 6px !important;
     z-index: 12 !important;
   }
+
+  /* Stark Horizontal Adjustment */
+  .ad-style-stark .reactor-core {
+    display: none !important; /* Hide reactor image to make space on mobile */
+  }
+
+  /* Bugle Horizontal Adjustment */
+  .ad-bugle-breaking-bar {
+    bottom: 40px !important;
+    font-size: 0.48rem !important;
+  }
+
+  .ad-bugle-headline-plate {
+    bottom: 16px !important;
+    font-size: 0.65rem !important;
+    padding: 2px 4px !important;
+  }
+
+  /* Logan Horizontal Adjustment */
+  .ad-logan-discount-plate {
+    position: absolute !important;
+    bottom: 16px !important;
+    left: 12px !important;
+    width: 60% !important;
+    padding: 3px 2px !important;
+  }
+  .ad-logan-discount-title {
+    font-size: 0.58rem !important;
+  }
+  .ad-logan-discount-sub {
+    font-size: 0.48rem !important;
+  }
+
+  /* Strange Horizontal Adjustment */
+  .ad-strange-logo-img {
+    width: 70px !important;
+    position: absolute !important;
+    left: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 12 !important;
+  }
+  .ad-strange-text-group {
+    position: absolute !important;
+    left: 95px !important; /* Place next to the seal symbol */
+    bottom: 25px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    z-index: 12 !important;
+  }
+  .ad-strange-title {
+    font-size: 0.8rem !important;
+    font-weight: 800 !important;
+    color: #b8912e !important;
+  }
+  .ad-strange-sub {
+    font-size: 0.55rem !important;
+    color: #666 !important;
+  }
+
+  /* Widow Horizontal Adjustment */
+  .ad-widow-badge {
+    top: 8px !important;
+    left: auto !important;
+    right: 12px !important;
+    font-size: 0.48rem !important;
+  }
+  .ad-widow-puzzle-box {
+    position: absolute !important;
+    left: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  /* Chimichanga Horizontal Adjustment */
+  .ad-style-chimichanga .ad-chimi-center-plate {
+    padding: 4px 8px !important;
+    width: 55% !important;
+    left: 12px !important;
+    transform: translateY(-50%) !important;
+    font-size: 0.48rem !important;
+  }
+  .ad-chimi-title {
+    font-size: 0.58rem !important;
+  }
+  .ad-chimi-details {
+    display: none !important; /* Hide small details text to save space */
+  }
+
+  /* 3. Disclaimer position on mobile (flows at the bottom of the scroll) */
+  .site-disclaimer-container {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 500px;
+    margin: 20px auto 30px auto !important;
+    padding: 0 10px !important;
+  }
+
+  /* 4. BSOD Layout (Fixed viewport stack, no scroll) */
+  #bsod-container {
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+    overflow-y: hidden !important;
+    align-items: center !important;
+    padding: 20px 10px !important;
+  }
+
+  /* 5. Jumpscare screamer sizing */
+  #jumpscare-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100dvw !important;
+    height: 100dvh !important;
+  }
+  
+  #jumpscare-img {
+    width: 100dvw !important;
+    height: 100dvh !important;
+    object-fit: cover !important;
+  }
+}
 
   /* Stark Horizontal Adjustment */
   .ad-style-stark .reactor-core {
@@ -2316,10 +2454,6 @@ body.freeze-cursor, body.freeze-cursor * {
   }
   .qr-code-wrapper {
     padding: 8px;
-  }
-  .fake-qr-code {
-    width: 90px;
-    height: 90px;
   }
   .bsod-meta {
     font-size: 0.75rem;
