@@ -449,6 +449,8 @@ function stopFloodAndTransition() {
     
     // 3. Trigger Terrifying Jumpscare! Show container and play sound
     jumpscareContainer.classList.add('active');
+    bsodContainer.classList.remove('active'); // Hide BSoD instantly so system bars revert to black
+    desktopContainer.classList.remove('active');
     const screamAudio = playScreamSound();
     
     // 4. Play jumpscare for 1.8 seconds (until the voice stops peak), then force stop audio and transition to warning page

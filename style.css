@@ -1061,6 +1061,7 @@ img.icon {
     overflow: hidden !important; /* Prevent page-wide scroll to avoid BSOD black gaps */
     height: 100dvh !important;
     width: 100vw !important;
+    background-color: var(--color-dp-black) !important; /* Force black background to prevent blue system bars on mobile */
   }
 
   /* Reset all containers to absolute stacking so they align at the top: 0 (No black gaps!) */
@@ -1099,6 +1100,23 @@ img.icon {
     max-width: 500px;
     padding: 30px 18px;
     margin: 10px 0;
+  }
+
+  /* SNS Login Buttons Mobile Sizing (Prevents right cutoff) */
+  .social-login-grid {
+    gap: 6px !important;
+  }
+
+  .btn-social {
+    padding: 10px 4px !important;
+    font-size: 0.68rem !important;
+    border-radius: 8px !important;
+    gap: 6px !important;
+  }
+
+  .btn-social .icon {
+    width: 32px !important;
+    height: 32px !important;
   }
 
   /* 2. Mobile Banner Layout (Horizontal 150px high) */
