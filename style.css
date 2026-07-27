@@ -2178,6 +2178,7 @@ body.freeze-cursor, body.freeze-cursor * {
     margin: 0 0 4px 0 !important; /* Force bottom margin instead of Flexbox gap */
     padding: 0 !important;
     line-height: 1.2 !important;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000 !important; /* Reset heavy vertical shadows! */
   }
 
   .ad-loki-en, .jk-loki-en {
@@ -2187,6 +2188,7 @@ body.freeze-cursor, body.freeze-cursor * {
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000 !important; /* Reset heavy vertical shadows! */
   }
 
   /* Jeff Horizontal Adjustment */
@@ -2308,11 +2310,11 @@ body.freeze-cursor, body.freeze-cursor * {
     left: 15px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    width: 82px !important; /* Width widened to fit buttons side-by-side */
+    width: 115px !important; /* Width widened to prevent button text wrapping */
     height: auto !important; /* Auto height to prevent overflow! */
     max-height: 90px !important;
-    padding: 4px !important;
-    gap: 3px !important;
+    padding: 5px 4px !important;
+    gap: 4px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -2324,12 +2326,12 @@ body.freeze-cursor, body.freeze-cursor * {
   }
   .jk-style-widow .ad-choice-btn, .jk-style-widow .jk-choice-btn {
     font-size: 0.45rem !important;
-    padding: 3px 1px !important;
+    padding: 3px 2px !important;
   }
   .jk-style-widow .ad-puzzle-fail-stamp, .jk-style-widow .jk-puzzle-fail-stamp {
     font-size: 0.45rem !important;
-    top: -12px !important;
-    right: -3px !important;
+    top: -10px !important;
+    right: -8px !important; /* Align nicely with the expanded border */
   }
 
   /* Chimichanga Horizontal Adjustment */

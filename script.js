@@ -679,8 +679,8 @@ const bannerTemplates = [
           <div class="ad-puzzle-fail-stamp">FAILED!</div>
           <div class="ad-puzzle-title">CHOOSE THE RIGHT WEAPON!</div>
           <div class="ad-puzzle-choices">
-            <div class="ad-choice-btn fail">🔫 Lvl.1 Gun</div>
-            <div class="ad-choice-btn">🪓 Lvl.99 Axe</div>
+            <div class="ad-choice-btn fail">🔫 Lv.1</div>
+            <div class="ad-choice-btn">🪓 Lv.99</div>
           </div>
         </div>
 
