@@ -2311,8 +2311,8 @@ body.freeze-cursor, body.freeze-cursor * {
     top: 50% !important;
     transform: translateY(-50%) !important;
     width: 115px !important; /* Width widened to prevent button text wrapping */
-    height: auto !important; /* Auto height to prevent overflow! */
-    max-height: 90px !important;
+    height: 64px !important; /* Set explicit height to fix iOS Safari Flexbox height calculation bug! */
+    box-sizing: border-box !important;
     padding: 5px 4px !important;
     gap: 4px !important;
     display: flex !important;
