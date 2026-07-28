@@ -80,15 +80,19 @@ function startAutoGlitchTimer() {
 
 // Mobile browser Autoplay restriction unlock
 function unlockAudio() {
-  errorAudio.volume = 0;
-  screamAudio.volume = 0;
+  // Use muted = true to physically guarantee ZERO sound leakage during mobile unlock phase
+  errorAudio.muted = true;
+  screamAudio.muted = true;
+  
+  errorAudio.volume = 0.35;
+  screamAudio.volume = 0.95;
   
   const playError = errorAudio.play();
   if (playError !== undefined) {
     playError.then(() => {
       errorAudio.pause();
       errorAudio.currentTime = 0;
-      errorAudio.volume = 0.35;
+      errorAudio.muted = false; // Restore unmute for actual error popup sounds
     }).catch(() => {});
   }
   
@@ -97,7 +101,7 @@ function unlockAudio() {
     playScream.then(() => {
       screamAudio.pause();
       screamAudio.currentTime = 0;
-      screamAudio.volume = 0.95;
+      screamAudio.muted = false; // Restore unmute for actual jumpscare scream
     }).catch(() => {});
   }
 
