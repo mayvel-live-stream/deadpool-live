@@ -28,6 +28,16 @@ let enteredUsername = "Buddy";
 let spawnedParodyCount = 0;
 let currentLang = "en";
 
+// Global Audio objects for mobile autoplay unlock
+const errorAudio = new Audio('assets/critical_stop.wav');
+const screamAudio = new Audio('assets/scream.mp3');
+errorAudio.load();
+screamAudio.load();
+
+let audioCtx = null;
+let screamSource = null;
+let isWebAudioSetup = false;
+
 // Initialize on page load
 window.addEventListener('load', () => {
   setupEventListeners();
@@ -68,10 +78,49 @@ function startAutoGlitchTimer() {
   }, 60000); // 60 seconds of idle time
 }
 
+// Mobile browser Autoplay restriction unlock
+function unlockAudio() {
+  errorAudio.volume = 0;
+  screamAudio.volume = 0;
+  
+  const playError = errorAudio.play();
+  if (playError !== undefined) {
+    playError.then(() => {
+      errorAudio.pause();
+      errorAudio.currentTime = 0;
+      errorAudio.volume = 0.35;
+    }).catch(() => {});
+  }
+  
+  const playScream = screamAudio.play();
+  if (playScream !== undefined) {
+    playScream.then(() => {
+      screamAudio.pause();
+      screamAudio.currentTime = 0;
+      screamAudio.volume = 0.95;
+    }).catch(() => {});
+  }
+
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (AudioContextClass) {
+      if (!audioCtx) {
+        audioCtx = new AudioContextClass();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+  } catch (e) {}
+}
+
 // Trigger the glitch sequence
 function triggerPrankSequence() {
   if (isGlitched) return;
   isGlitched = true;
+  
+  // Unlock audio instantly on user's first touch gesture
+  unlockAudio();
 
   // Grab the entered username for personalized birthday easter egg
   const usernameInput = document.getElementById('username');
@@ -341,9 +390,9 @@ function playBeepSound() {
 // Windows Critical Stop Audio player with Web Audio fallback
 function playErrorSound() {
   try {
-    const audio = new Audio('assets/critical_stop.wav');
-    audio.volume = 0.35;
-    const playPromise = audio.play();
+    errorAudio.currentTime = 0;
+    errorAudio.volume = 0.35;
+    const playPromise = errorAudio.play();
     if (playPromise !== undefined) {
       playPromise.catch(error => {
         // Autoplay blocked by browser, fallback to synthesized beep
@@ -357,8 +406,8 @@ function playErrorSound() {
 
 // Terrifying Exorcist Jumpscare sound player (Applying distortion/echo effects on HTTP, with zero-silence fallback for local file://)
 function playScreamSound() {
-  const audio = new Audio('assets/scream.mp3');
-  audio.volume = 0.95;
+  screamAudio.volume = 0.95;
+  screamAudio.currentTime = 0;
 
   try {
     // If running on local file:// scheme, bypass Web Audio API to prevent CORS security silence
@@ -366,55 +415,64 @@ function playScreamSound() {
       throw new Error('Local file scheme detected, bypassing Web Audio API to prevent CORS silence.');
     }
 
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const source = audioCtx.createMediaElementSource(audio);
-    
-    // 1. Distortion Node (Gritty vocal crack texture)
-    const distortion = audioCtx.createWaveShaper();
-    distortion.curve = makeDistortionCurve(65);
-    distortion.oversample = '4x';
-    
-    // 2. Delay Node (Reverberating echo)
-    const delay = audioCtx.createDelay(1.0);
-    delay.delayTime.setValueAtTime(0.18, audioCtx.currentTime); // 180ms echo
-    
-    // Echo decay gain node
-    const feedback = audioCtx.createGain();
-    feedback.gain.setValueAtTime(0.45, audioCtx.currentTime); // 45% feedback
-    
-    // 3. Highpass Filter (Emphasize high-pitch scream)
-    const filter = audioCtx.createBiquadFilter();
-    filter.type = 'highpass';
-    filter.frequency.setValueAtTime(450, audioCtx.currentTime);
-    
-    // 4. Main Out Gain Node
-    const mainGain = audioCtx.createGain();
-    mainGain.gain.setValueAtTime(0.95, audioCtx.currentTime);
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
 
-    // Audio Graph Routing:
-    source.connect(distortion);
-    distortion.connect(filter);
-    filter.connect(mainGain);
+    // MediaElementSource can only be created once
+    if (!isWebAudioSetup) {
+      screamSource = audioCtx.createMediaElementSource(screamAudio);
+      
+      // 1. Distortion Node (Gritty vocal crack texture)
+      const distortion = audioCtx.createWaveShaper();
+      distortion.curve = makeDistortionCurve(65);
+      distortion.oversample = '4x';
+      
+      // 2. Delay Node (Reverberating echo)
+      const delay = audioCtx.createDelay(1.0);
+      delay.delayTime.setValueAtTime(0.18, audioCtx.currentTime); // 180ms echo
+      
+      // Echo decay gain node
+      const feedback = audioCtx.createGain();
+      feedback.gain.setValueAtTime(0.45, audioCtx.currentTime); // 45% feedback
+      
+      // 3. Highpass Filter (Emphasize high-pitch scream)
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'highpass';
+      filter.frequency.setValueAtTime(450, audioCtx.currentTime);
+      
+      // 4. Main Out Gain Node
+      const mainGain = audioCtx.createGain();
+      mainGain.gain.setValueAtTime(0.95, audioCtx.currentTime);
+
+      // Audio Graph Routing:
+      screamSource.connect(distortion);
+      distortion.connect(filter);
+      filter.connect(mainGain);
+      
+      // Echo feedback loop routing
+      filter.connect(delay);
+      delay.connect(feedback);
+      feedback.connect(delay);
+      delay.connect(mainGain);
+      
+      mainGain.connect(audioCtx.destination);
+      
+      isWebAudioSetup = true;
+    }
     
-    // Echo feedback loop routing
-    filter.connect(delay);
-    delay.connect(feedback);
-    feedback.connect(delay);
-    delay.connect(mainGain);
-    
-    mainGain.connect(audioCtx.destination);
-    
-    audio.play().catch(err => {
+    screamAudio.play().catch(err => {
       // Autoplay blocked by browser policy
     });
-    return audio;
+    return screamAudio;
   } catch (e) {
     // Fallback: Safe direct playback for local file:// mode or blocked AudioContext
     try {
-      const fallbackAudio = new Audio('assets/scream.mp3');
-      fallbackAudio.volume = 0.95;
-      fallbackAudio.play().catch(err => {});
-      return fallbackAudio;
+      screamAudio.play().catch(err => {});
+      return screamAudio;
     } catch (err) {
       return null;
     }
@@ -453,7 +511,7 @@ function stopFloodAndTransition() {
     desktopContainer.classList.remove('active');
     const screamAudio = playScreamSound();
     
-    // 4. Play jumpscare for 1.8 seconds (until the voice stops peak), then force stop audio and transition to warning page
+    // 4. Play jumpscare for 1.2 seconds (until the voice stops peak), then force stop audio and transition to warning page
     setTimeout(() => {
       if (screamAudio) {
         try {
@@ -469,7 +527,7 @@ function stopFloodAndTransition() {
       warningContainer.scrollTop = 0;
       window.scrollTo(0, 0);
       desktopContainer.innerHTML = '';
-    }, 1800); // Sync image hide and audio stop at 1.8s
+    }, 1200); // Sync image hide and audio stop at 1.2s
   }, 3500); // 3.5 seconds pause (the "間")
 }
 
@@ -500,6 +558,14 @@ function resetPrank() {
   clearInterval(floodTimer);
   clearTimeout(floodDurationTimeout);
   desktopContainer.innerHTML = '';
+  
+  // Stop and reset audio elements on reset
+  try {
+    errorAudio.pause();
+    errorAudio.currentTime = 0;
+    screamAudio.pause();
+    screamAudio.currentTime = 0;
+  } catch (err) {}
   
   // Make sure freeze classes are removed
   document.body.classList.remove('freeze-cursor');
